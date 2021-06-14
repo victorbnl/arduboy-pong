@@ -188,7 +188,17 @@ void gameLoop() {
     // Draw middle line
     arduboy.fillRect(WIDTH/2-MIDDLE_LINE_WIDTH/2-1, 0, MIDDLE_LINE_WIDTH, HEIGHT, 1);
     // Draw score A
-    arduboy.setCursor(WIDTH/2-CHAR_WIDTH-SCALE, SCALE);
+    int digits = 0;
+    if (Ascore == 0) {
+      digits = 1;
+    } else {
+      int tmp = Ascore;
+      while (tmp) {
+        tmp /= 10;
+        digits++;
+      }
+    }
+    arduboy.setCursor(WIDTH/2-CHAR_WIDTH*digits-SCALE, SCALE);
     arduboy.print(Ascore);
     // Draw score B
     arduboy.setCursor(WIDTH/2+SCALE, SCALE);
