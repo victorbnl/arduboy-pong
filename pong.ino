@@ -228,12 +228,7 @@ void reset() {
   ballVx = BALL_SPEED;
   ballVy = BALL_SPEED;
   
-  // Random ball x direction
-  if (rand() % 2 == 1) {
-    ballVx = BALL_SPEED;
-  } else {
-    ballVx = BALL_SPEED * -1;
-  }
+  ballVx = BALL_SPEED;
   
   // Random ball y direction
   if (rand() % 2 == 1) {
