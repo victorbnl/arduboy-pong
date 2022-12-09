@@ -1,9 +1,5 @@
 # Pong
 
-A simple Pong game for Arduino
+A simple pong game for [Arduboy](https://www.arduboy.com/).
 
-## FAQ
-
-### Why are there comments with {}?
-
-I collapse them using VSCode's [#region folding](https://marketplace.visualstudio.com/items?itemName=maptz.regionfolder)
+![](.readme/screenshot.png)
