@@ -163,14 +163,14 @@ void gameLoop() {
     // Move ball
     ballX += ballVx;
     ballY += ballVy;
-    
+
     // The ball touches paddle A
     if (ballX < PAD_WIDTH && (ballY >= paddleAY && ballY <= paddleAY+PAD_HEIGHT)) {
       ballVx = BALL_SPEED;
       Ascore++;
       sound.tone(300, 100);
     }
-  
+
     // The ball touches paddle B
     if (ballX > WIDTH-PAD_WIDTH && (ballY >= paddleBY && ballY <= paddleBY+PAD_HEIGHT)) {
       ballVx = BALL_SPEED * -1;
@@ -182,7 +182,7 @@ void gameLoop() {
     if (ballY <= 0 || ballY >= HEIGHT) {
       ballVy = ballVy * -1;
     }
-  
+
     // Drawings
     arduboy.clear();
     // Draw middle line
@@ -220,29 +220,29 @@ void gameLoop() {
 void reset() {
   ballY = HEIGHT/2;
   ballX = WIDTH/2-BALL_WIDTH/2;
-  
+
   ballVx = 0;
   ballVy = 0;
-  
+
   delay(100);
   ballVx = BALL_SPEED;
   ballVy = BALL_SPEED;
-  
+
   ballVx = BALL_SPEED;
-  
+
   // Random ball y direction
   if (rand() % 2 == 1) {
     ballVy = BALL_SPEED;
   } else {
     ballVy = BALL_SPEED * -1;
   }
-  
+
   Ascore = 0;
   Bscore = 0;
-  
+
   arduboy.setRGBled(0, 0, 0);
-  
+
   gameOverTonePlayed = false;
-  
+
   running = true;
 }
